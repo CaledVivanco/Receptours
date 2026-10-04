@@ -1,0 +1,222 @@
+/* ==========================================================================
+   VISTA DETALLE: ALQUILER (ESTILO HOMOGÉNEO A TOURS)
+   ========================================================================== */
+
+/* ================= HERO ================= */
+.alquiler-hero {
+  position: relative;
+  width: 100%;
+  height: 75vh;
+  min-height: 450px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-color: #000;
+  
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+}
+
+/* CAPA OSCURA (Usa la opacidad limpia de Tours) */
+.alquiler-hero .overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+  z-index: 1;
+}
+
+/* CONTENIDO SOBRE IMAGEN */
+.alquiler-hero .hero-content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  color: #fff;
+  padding: 0 24px;
+}
+
+/* TITULO (Estilo exacto a Tours) */
+.alquiler-hero .hero-content h1 {
+  font-size: 52px;
+  font-weight: 700;
+  text-transform: uppercase;
+  margin-bottom: 10px;
+  text-shadow: 0 4px 15px rgba(0,0,0,0.4);
+}
+
+/* PRECIO (Estilo píldora verde de Tours) */
+.alquiler-hero .hero-content p {
+  background: #25D366;
+  display: inline-block;
+  padding: 8px 20px;
+  border-radius: 50px;
+  font-weight: 600;
+  font-size: 18px;
+  color: #fff;
+  margin: 0;
+  text-shadow: none;
+}
+
+/* ================= CONTENIDO INFERIOR ================= */
+.alquiler-wrapper {
+  background: #fff;
+  position: relative;
+  z-index: 20;
+}
+
+.alquiler-content-wrapper {
+  max-width: 1100px;
+  margin-left: 40px; /* Alineado a la izquierda como Tours */
+}
+
+/* ================= SECCIONES Y TEXTOS ================= */
+.alquiler-section {
+  padding: 40px 0;
+  max-width: 800px;
+}
+
+/* TITULO CON LÍNEA DINÁMICA */
+.alquiler-section h2 {
+  font-size: 28px;
+  color: #111;
+  position: relative;
+  padding-bottom: 20px;
+  border-bottom: 2px solid #eee;
+  margin-bottom: 20px;
+}
+
+/* LÍNEA VERDE DE CONTROL TOTAL */
+.alquiler-section h2::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 35px; 
+  width: 60px;
+  height: 3px;
+  background: #25D366;
+  border-radius: 2px;
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.5s ease;
+}
+
+/* ANIMACIÓN AL ACTIVAR LA CLASE .show */
+.alquiler-section.show h2::after {
+  transform: scaleX(1);
+}
+
+/* TEXTOS Y LISTAS ELEMENTOS */
+.alquiler-section p,
+.alquiler-section ul {
+  color: #444;
+  line-height: 1.7;
+  font-size: 16px;
+}
+
+.alquiler-section ul {
+  padding-left: 20px;
+}
+
+.alquiler-section li {
+  margin-bottom: 10px;
+}
+
+/* ================= CONTENEDOR SLIDER / CARDS ================= */
+#rental-track {
+  display: flex;
+  gap: 16px;
+  transition: transform 0.4s ease;
+  margin-top: 25px;
+}
+
+.alquiler-card {
+  min-width: 260px;
+  height: 320px;
+  border-radius: 14px;
+  overflow: hidden;
+  position: relative;
+  cursor: pointer;
+  flex-shrink: 0;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.15);
+}
+
+.alquiler-card img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.alquiler-card .overlay-text {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  padding: 12px;
+  background: linear-gradient(to top, rgba(0,0,0,0.7), transparent);
+  color: white;
+}
+
+.alquiler-card h3 {
+  font-size: 16px;
+  margin: 0;
+}
+
+.alquiler-card span {
+  font-size: 14px;
+}
+
+/* ================= BOTÓN RESERVA ================= */
+.alquiler-reserve {
+  text-align: center;
+  padding: 40px 0 100px 0;
+}
+
+#reserveAlquilerBtn {
+  background: #25D366;
+  color: #fff;
+  border: none;
+  padding: 14px 35px;
+  font-size: 16px;
+  font-weight: 600;
+  border-radius: 8px;
+  cursor: pointer;
+  box-shadow: 0 8px 20px rgba(37,211,102,0.3);
+  transition: all 0.3s ease;
+}
+
+#reserveAlquilerBtn:hover {
+  background: #1fae57;
+  transform: translateY(-2px);
+  box-shadow: 0 12px 25px rgba(37,211,102,0.4);
+}
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 768px) {
+  .alquiler-hero {
+    height: 60vh;
+  }
+
+  .alquiler-hero .hero-content h1 {
+    font-size: 34px;
+  }
+
+  .alquiler-hero .hero-content p {
+    font-size: 16px;
+  }
+
+  .alquiler-content-wrapper {
+    margin-left: 20px;
+    padding-right: 20px;
+  }
+  
+  .alquiler-section {
+    padding: 40px 0;
+  }
+}
+#price {
+  display: none !important;
+}

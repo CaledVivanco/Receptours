@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Receptours cartagena</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="noticias-detail.css">
+  
+</head>
+<body>
+
+<header class="nav nav-solid">
+  <nav>
+    <a href="index.html">Inicio</a>
+    <a href="tours.html">Tours</a>
+    <a href="alquiler.html">Alquiler</a>
+    <a href="noticias.html">Noticias</a>
+  </nav>
+</header>
+
+<!-- HERO IMAGEN -->
+<div class="nd-hero">
+  <img id="imagen-noticia" alt="Imagen de la noticia">
+  <div class="nd-hero-overlay"></div>
+  <div class="nd-hero-tag">NOTICIAS</div>
+</div>
+
+<!-- CONTENIDO -->
+<article class="nd-article">
+
+  <div class="nd-meta">
+    <span class="nd-categoria">Cartagena · Turismo</span>
+    <span class="nd-fecha" id="nd-fecha"></span>
+  </div>
+
+  <h1 id="titulo-noticia"></h1>
+
+  <div class="nd-divider"></div>
+
+  <p class="nd-lead" id="nd-lead"></p>
+
+  <p id="contenido-noticia"></p>
+
+  <div class="nd-footer-article">
+    <button onclick="history.back()" class="nd-btn-volver">
+      ← Volver a noticias
+    </button>
+    <div class="nd-share">
+      <span>Compartir</span>
+      
+<button class="nd-share-btn" id="btn-whatsapp">WhatsApp</button>
+<button class="nd-share-btn" id="btn-facebook">Facebook</button>
+    </div>
+  </div>
+
+</article>
+
+<script src="script.js"></script>
+
+
+<script>
+  // Esperar a que el DOM esté completamente cargado
+document.addEventListener("DOMContentLoaded", () => {
+  
+  const btnWhatsapp = document.getElementById("btn-whatsapp");
+  const btnFacebook = document.getElementById("btn-facebook");
+
+  // Función para compartir en WhatsApp
+  if (btnWhatsapp) {
+    btnWhatsapp.addEventListener("click", () => {
+      // Obtenemos la URL de la página actual
+      const urlActual = encodeURIComponent(window.location.href);
+      // Obtenemos el título de la noticia (o el título del documento por defecto)
+      const tituloNoticia = encodeURIComponent(document.getElementById("titulo-noticia").textContent || document.title);
+      
+      // Creamos la URL de la API de WhatsApp
+      const whatsappUrl = `https://api.whatsapp.com/send?text=${tituloNoticia}%20-%20${urlActual}`;
+      
+      // Abrimos en una nueva pestaña
+      window.open(whatsappUrl, "_blank");
+    });
+  }
+
+  // Función para compartir en Facebook
+  if (btnFacebook) {
+    btnFacebook.addEventListener("click", () => {
+      // Obtenemos la URL de la página actual
+      const urlActual = encodeURIComponent(window.location.href);
+      
+      // Creamos la URL para el sharer de Facebook
+      const facebookUrl = `https://www.facebook.com/sharer/sharer.php?u=${urlActual}`;
+      
+      // Abrimos en una ventana emergente
+      window.open(facebookUrl, "Compartir en Facebook", "width=600,height=400");
+    });
+  }
+});
+</script>
+
+</body>
+</html>

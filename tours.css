@@ -1,0 +1,176 @@
+/* ================= HERO ================= */
+.tour-hero {
+  position: relative;
+  width: 100%;
+  height: 75vh;
+  min-height: 450px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.tour-hero .overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0,0,0,0.45);
+}
+
+.hero-content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  color: #fff;
+}
+
+.hero-content h1 {
+  font-size: 52px;
+  margin-bottom: 10px;
+  text-transform: uppercase;
+}
+
+.hero-content p {
+  background: #25D366;
+  display: inline-block;
+  padding: 8px 20px;
+  border-radius: 50px;
+  font-weight: 600;
+}
+
+/* ================= CONTENIDO ================= */
+.content-wrapper {
+  max-width: 1100px;
+  margin-left: 40px; /* 👈 mueve a la izquierda */
+}
+
+/* ================= SECCIONES ================= */
+.tour-section {
+  padding: 40px 0;
+  max-width: 800px;
+}
+
+/* TITULO */
+.tour-section h2 {
+  font-size: 28px;
+  color: #111;
+
+  position: relative;
+  padding-bottom: 20px;
+
+  border-bottom: 2px solid #eee; /* gris */
+}
+
+/* LINEA VERDE (BIEN POSICIONADA ARRIBA) */
+.tour-section h2::after {
+  content: "";
+  position: absolute;
+  left: 0;
+
+  top: 35px; /* 👈 CONTROL TOTAL (sube/baja aquí) */
+
+  width: 60px;
+  height: 3px;
+  background: #25D366;
+  border-radius: 2px;
+
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.5s ease;
+}
+
+/* ANIMACION */
+.tour-section.show h2::after {
+  transform: scaleX(1);
+}
+
+/* TEXTO */
+.tour-section p,
+.tour-section ul {
+  color: #444;
+  line-height: 1.7;
+}
+
+.tour-section ul {
+  padding-left: 20px;
+}
+
+/* ================= BOTON ================= */
+.reserve-box {
+  text-align: center;
+  padding: 40px 0;
+}
+
+#reserveBtn {
+  background: #25D366;
+  color: white;
+  border: none;
+  padding: 14px 35px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+#reserveBtn:hover {
+  background: #1fae57;
+}
+
+/* ================= RESPONSIVE ================= */
+@media (max-width: 768px) {
+  .hero-content h1 {
+    font-size: 34px;
+  }
+
+  .tour-hero {
+    height: 60vh;
+  }
+
+  .content-wrapper {
+    margin-left: 20px;
+  }
+}
+#price {
+  display: none !important;
+}
+/* Badge disponible cayendo desde arriba */
+.tour-card .badge-disponible {
+  position: absolute;
+  top: -40px;
+  left: 15px;
+  background: #25D366;
+  color: #fff;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  padding: 5px 12px;
+  border-radius: 0 0 8px 8px;
+  transition: top 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  z-index: 10;
+}
+
+.tour-card:hover .badge-disponible {
+  top: 0px;
+}
+
+.tour-card .badge-reserva {
+  position: absolute;
+  top: -40px;
+  right: 15px;
+  background: rgba(0,0,0,0.75);
+  color: #fff;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  padding: 5px 12px;
+  border-radius: 0 0 8px 8px;
+  transition: top 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275) 0.08s;
+  z-index: 10;
+}
+
+.tour-card:hover .badge-reserva {
+  top: 0px;
+}

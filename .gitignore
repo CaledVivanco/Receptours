@@ -1,0 +1,10 @@
+# Ignore large image files
+img/
+Agencia_Jose/img/
+
+# Other common ignores
+node_modules/
+.DS_Store
+Thumbs.db
+*.log
+.env

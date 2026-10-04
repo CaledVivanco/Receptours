@@ -1,0 +1,270 @@
+/* ==========================================================================
+   VISTA DETALLE: FOTO PANTALLA COMPLETA (FULLSCREEN)
+   ========================================================================== */
+
+.tour-hero {
+  position: relative;
+  width: 100%;
+  height: 100vh; /* Fuerza a ocupar el 100% del alto de la pantalla */
+  background-position: center center !important;
+  background-repeat: no-repeat !important;
+  background-size: cover !important; /* Estira la imagen perfectamente sin deformarla */
+  margin: 0;
+  padding: 0;
+}
+
+/* Envoltura para el contenido de abajo */
+.content-wrapper {
+  background: #ffffff;
+  position: relative;
+  z-index: 10;
+  padding-top: 20px;
+}
+
+/* Secciones de texto */
+.tour-section {
+  padding: 40px 10%;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+/* Diseño elegante para el título y precio debajo de la foto */
+#title {
+  font-size: 42px;
+  font-weight: 700;
+  color: #111;
+  text-transform: uppercase;
+  margin-bottom: 5px;
+}
+
+#price {
+  font-size: 22px;
+  font-weight: 600;
+  color: #25D366; /* Verde llamativo para el precio */
+  margin-top: 0;
+  margin-bottom: 40px;
+}
+
+.tour-section h2 {
+  font-size: 26px;
+  color: #111;
+  margin-top: 30px;
+  margin-bottom: 15px;
+  border-bottom: 2px solid #eee;
+  padding-bottom: 8px;
+}
+
+.tour-section p, .tour-section ul {
+  font-size: 16px;
+  color: #444;
+  line-height: 1.7;
+}
+
+.tour-section ul {
+  padding-left: 20px;
+}
+
+.tour-section li {
+  margin-bottom: 8px;
+}
+
+/* Caja del botón de reserva */
+.reserve-box {
+  text-align: center;
+  padding: 40px 0 60px 0;
+}
+
+#reserveBtn {
+  background: #25D366;
+  color: white;
+  border: none;
+  padding: 16px 40px;
+  font-size: 18px;
+  font-weight: 600;
+  border-radius: 8px;
+  cursor: pointer;
+  box-shadow: 0 6px 20px rgba(37, 211, 102, 0.3);
+  transition: transform 0.2s, background 0.2s;
+}
+
+#reserveBtn:hover {
+  background: #1fae57;
+  transform: translateY(-2px);
+}
+
+/* Ajustes para celulares */
+@media (max-width: 768px) {
+  .tour-hero {
+    height: 100vh; /* Se mantiene en pantalla completa en móviles */
+  }
+  #title {
+    font-size: 32px;
+  }
+  .tour-section {
+    padding: 30px 24px;
+  }
+}
+/* ==========================================================================
+   VISTA DETALLE: TEXTOS EN BLANCO ENCIMA DE LA FOTO (BASADO EN TU BASE)
+   ========================================================================== */
+
+.tour-hero {
+  position: relative;
+  width: 100%;
+  height: 100vh; /* Fuerza a que ocupe toda la pantalla completa como tu .slider */
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Centra verticalmente los textos */
+  align-items: center;     /* Centra horizontalmente los textos */
+  background-position: center center !important;
+  background-repeat: no-repeat !important;
+  background-size: cover !important; /* Estira la imagen perfectamente */
+  margin: 0;
+  padding: 0;
+}
+
+/* Capa oscura basada en tus gradientes para que las letras blancas resalten */
+.tour-hero .overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(to top, rgba(0,0,0,0.65), rgba(0,0,0,0.35), rgba(0,0,0,0.5));
+  z-index: 1;
+}
+
+/* Caja de contenidos flotante sobre el Hero */
+.tour-hero .hero-content {
+  position: relative;
+  z-index: 10; /* Por encima del overlay oscuro */
+  text-align: center;
+  padding: 0 24px;
+  max-width: 800px;
+  box-sizing: border-box;
+}
+
+/* Tu Título adaptado con el tamaño imponente de tu clase .text h1 */
+.tour-hero .hero-content h1 {
+  font-size: 72px; /* Mismo tamaño de tu slider principal */
+  color: #ffffff !important;
+  font-weight: 700;
+  text-transform: uppercase;
+  text-shadow: 0 8px 30px rgba(0,0,0,0.6); /* Tu sombra original */
+  margin: 0 0 15px 0;
+}
+
+/* Tu Precio adaptado con la estética de tu clase .text p */
+.tour-hero .hero-content p {
+  font-size: 28px; /* Mismo tamaño estilizado */
+  color: rgba(255, 255, 255, 0.95) !important;
+  text-shadow: 0 6px 20px rgba(0,0,0,0.6); /* Tu sombra original */
+  margin: 0;
+  font-weight: 500;
+  letter-spacing: 0.5px;
+}
+
+/* ================= CONTENIDO INFERIOR (CUERPO DEL TOUR) ================= */
+
+/* Envoltura para las secciones informativas que aparecen al bajar */
+.content-wrapper {
+  background: #ffffff;
+  position: relative;
+  z-index: 20;
+}
+
+/* Reutiliza tu padding estándar (.section) y tu color de títulos de sección */
+.tour-section {
+  padding: 100px 60px; /* Tus márgenes de escritorio */
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.tour-section h2 {
+  font-size: 40px;
+  font-weight: 600;
+  color: #111;
+  margin-top: 0;
+  margin-bottom: 25px;
+
+  position: relative;
+  padding-bottom: 18px;
+
+  border-bottom: 2px solid #eee; /* gris fija */
+}
+
+.tour-section h2::after {
+  content: "";
+  position: absolute;
+  left: 0;
+
+  width: 60px;
+  height: 3px;
+  background: #25D366;
+  border-radius: 2px;
+
+  bottom: 0;
+  transform: translateY(-12px); /* 👈 SOLO SUBE LA VERDE */
+}
+.tour-section ul {
+  font-size: 16px;
+  color: #444;
+  line-height: 1.6; /* Tu line-height base */
+}
+
+.tour-section ul {
+  padding-left: 20px;
+}
+
+.tour-section li {
+  margin-bottom: 10px;
+}
+
+/* ================= BOTÓN RESERVAR WHATSAPP PREMIUM ================= */
+.reserve-box {
+  text-align: center;
+  padding: 40px 60px 100px 60px;
+}
+
+#reserveBtn {
+  background: #25D366 !important; /* Tu verde premium */
+  color: #ffffff !important;
+  border: none;
+  padding: 14px 40px;
+  font-size: 16px;
+  font-weight: 600;
+  border-radius: 8px; /* Tus bordes redondeados base */
+  box-shadow: 0 8px 20px rgba(37, 211, 102, 0.3);
+  transition: all 0.3s ease;
+}
+
+#reserveBtn:hover {
+  background: #1fae57 !important;
+  transform: translateY(-2px);
+  box-shadow: 0 12px 25px rgba(37, 211, 102, 0.4);
+}
+
+/* ================= CONFIGURACIÓN DE ADAPTACIÓN MÓVIL ================= */
+@media (max-width: 768px) {
+  .tour-hero .hero-content h1 {
+    font-size: 38px; /* Mismo tamaño de tu h1 móvil */
+  }
+  
+  .tour-hero .hero-content p {
+    font-size: 20px;
+  }
+  
+  .tour-section {
+    padding: 60px 24px !important; /* Tu padding adaptivo para celulares */
+  }
+  
+  .tour-section h2 {
+    font-size: 28px; /* Consistente con tus H2 en móviles */
+  }
+}
+.tour-section h2::after {
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 0.5s ease;
+}
+
+.tour-section.show h2::after {
+  transform: scaleX(1);
+}
